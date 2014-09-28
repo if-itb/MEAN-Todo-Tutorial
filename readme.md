@@ -32,7 +32,7 @@ $ npm install -g grunt-cli
 * Twitter Bootstrap - Defined as bower module in the [bower.json](bower.json) file.
 * UI Bootstrap - Defined as bower module in the [bower.json](bower.json) file.
 
-## Quick Install
+## Step 01 - Quick Install
   The quickest way to get started with MEAN is to install the `meanio` package from NPM.
 
   Install MEAN CLI:
@@ -56,4 +56,31 @@ $ npm install -g grunt-cli
   Then, open a browser and go to:
 
     http://localhost:3000
+
+## Step 02 - Generate Package Todo
+
+Do following command in your terminal
+
+  mean package todos
+
+You will get the following custom packages
+
+  _ packages
+  |_ custom
+    |_ todos
+      |_ public
+        |_ assets
+        |_ controllers
+        |_ directives
+        |_ routes
+        |_ services
+        |_ views
+        |__ todos.js
+      |_ server
+        |_ config
+        |_ controllers
+        |_ models
+        |_ routes
+        |_ views
+      |__ app.js
 
