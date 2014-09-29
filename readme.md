@@ -65,22 +65,32 @@ Do following command in your terminal
 
 You will get the following custom packages
 
-  _ packages
-  |_ custom
-    |_ todos
-      |_ public
-        |_ assets
-        |_ controllers
-        |_ directives
-        |_ routes
-        |_ services
-        |_ views
-        |__ todos.js
-      |_ server
-        |_ config
-        |_ controllers
-        |_ models
-        |_ routes
-        |_ views
-      |__ app.js
+        |_ packages
+          |_ custom
+            |_ todos
+              |_ public
+                |_ assets
+                |_ controllers
+                |_ directives
+                |_ routes
+                |_ services
+                |_ views
+                |__ todos.js
+              |_ server
+                |_ config
+                |_ controllers
+                |_ models
+                |_ routes
+                |_ views
+              |__ app.js
 
+
+## Step 03 - Server Routing & Remove Authentication
+
+In file packages > custom > todos > app.js, remove the roles authenticated so that we can access the todo routes without login
+
+    roles: ['authenticated'],
+
+Then in add a controller and model in the server. You may test the server using POSTMAN, to get all todos, or add new todo
+
+    http://localhost:3000/todos
