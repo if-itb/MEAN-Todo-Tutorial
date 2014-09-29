@@ -2,8 +2,8 @@
 
 angular.module('mean.todos').config(['$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('todos example page', {
-      url: '/todos/example',
+    $stateProvider.state('todos page', {
+      url: '/todos',
       templateUrl: 'todos/views/index.html'
     });
   }

@@ -25,7 +25,7 @@ exports.todo = function(req, res, next, id) {
  */
 exports.create = function(req, res) {
   var todo = new Todo(req.body);
-
+  todo.status = false;
   todo.save(function(err) {
     if (err) {
       return res.json(500, {
@@ -84,7 +84,7 @@ exports.show = function(req, res) {
  * List of Todos
  */
 exports.all = function(req, res) {
-  Todo.find().exec(function(err, todos) {
+  Todo.find().sort('-created').exec(function(err, todos) {
     if (err) {
       return res.json(500, {
         error: 'Cannot list the todos'

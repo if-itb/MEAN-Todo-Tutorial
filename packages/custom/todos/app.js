@@ -19,7 +19,7 @@ Todos.register(function(app, auth, database) {
   //We are adding a link to the main menu for all authenticated users
   Todos.menus.add({
     title: 'Todo',
-    link: 'todos example page',
+    link: 'todos page',
     menu: 'main'
   });
   

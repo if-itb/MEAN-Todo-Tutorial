@@ -1,3 +1,11 @@
 .todos-example h1 {
   background-color: purple
 }
+
+.todos_item {
+    padding: 20px;
+}
+
+.todos_strike {
+  text-decoration: line-through;
+}

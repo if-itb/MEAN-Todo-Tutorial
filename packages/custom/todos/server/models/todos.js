@@ -20,10 +20,7 @@ var TodoSchema = new Schema({
     required: true,
     trim: true
   },
-  status: {
-    type: Boolean,
-    required: false
-  }
+  status: Boolean
 });
 
 /**

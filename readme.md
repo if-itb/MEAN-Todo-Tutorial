@@ -94,3 +94,9 @@ In file packages > custom > todos > app.js, remove the roles authenticated so th
 Then in add a controller and model in the server. You may test the server using POSTMAN, to get all todos, or add new todo
 
     http://localhost:3000/todos
+
+
+## Step 04 - Angular Client Routing & Service
+
+Male a controller, services, and fix the roues of the public folder.
+Don't forget to change the app.js to the same route of client.

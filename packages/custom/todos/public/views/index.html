@@ -1,27 +1,28 @@
-<div class="" data-ng-controller="TodosController">
-  <h1>Example view from your new awesome package</h1>
-  <h2>Package: {{package.name}}</h2>
-  <ol>
-    <li>
-      <a href="todos/example/anyone">Server route that anyone can access</a>
-    </li>
-    <li>
-      <a href="todos/example/auth">Server route that requires authentication</a>
-    </li>
-    <li>
-      <a href="todos/example/admin">Server route that requires admin user</a>
-    </li>
-    <li>
-      <a href="todos/example/render">Raw Html rendering example from using swig</a>
-    </li>
-  </ol>
-  <h3><img src="/todos/assets/img/logo.png" /></h3>
-  </br>
-  <p class="alert alert-info">You can find your package in /packages/todos</p>
-  </br>
-  <p class="alert alert-warning">MEAN versions prior to 0.3.2 will be in /node_modules/todos</p>
-  </br>
-  <h3><a href="http://www.mean.io/#!/docs">Documentation</a></h3>
-  </br>
-</div>
+<section data-ng-controller="TodosController" data-ng-init="find()">
+  <form name="todoForm" role="form" data-ng-submit="create(todoForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : submitted && todoForm.stuff.$invalid }">
+      <div class="col-md-9">
+        <input name="stuff" type="text" class="form-control" data-ng-model="stuff" id="stuff" placeholder="Stuff" required>
+        <div ng-show="submitted && todoForm.stuff.$invalid" class="help-block">
+          <p ng-show="todoForm.stuff.$error.required">Stuff is required</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-9">
+        <button type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+  </form>
+  <div style="clear: both" class="wrap_todos">
+    <div class="todos unstyled">
+      <div data-ng-repeat="todo in todos" class="todos_item" ng-class="{todos_strike: todo.status}">
+        <input type="checkbox" ng-model="todo.status" ng-change="updateStatus(todo._id, todo.status)">
+        {{todo.stuff}}
+        <small class="text-muted text-small">{{todo.created | date:'medium'}}</small>
+      </div>
+    </div>
+    <h1 data-ng-hide="!todos || todos.length">No todos yet.</h1>
+  </div>
+</section>
 
